@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: good_model
+    columns:
+      - name: clerk_name
+        tests:
+          - unique

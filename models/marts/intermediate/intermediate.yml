@@ -100,3 +100,16 @@ models:
         description: '{{ doc("available_quantity") }}'
       - name: cost
         description: '{{ doc("cost") }}'
+
+  - name: order_items_bad
+    description: Intermediate model where we calculate item price, discounts and tax. This model is at the order item level.
+    tags:
+      - output_table_type|orders
+    columns:
+      - name: order_item_key
+        description: '{{ doc("order_item_key") }}'
+      - name: order_key
+        description: foreign key for orders
+        tests:
+          - unique
+          - not_null
